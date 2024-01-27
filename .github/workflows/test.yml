@@ -15,6 +15,8 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
+        redis:
+          - 7
 
     steps:
       - uses: actions/checkout@v3
@@ -32,3 +34,4 @@ jobs:
       - run: npm run dotest
         env:
           MODE: test
+          REDIS_HOST: redis
